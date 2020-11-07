@@ -14,7 +14,7 @@ input("Press Enter to continue")
 print("Loading...")
 name = input("Enter username")
 x = requests.get('http://192.168.1.87:5000/returnchat')
-if x.text == "{'name': 'Ike', 'message': 'pardon " + name + "'}":
+if x.text == "'Ike: pardon " + name + "'":
     with open("banlogs.txt", "r+") as f:
         data = f.read()
         f.seek(0)
@@ -37,7 +37,7 @@ slot = ""
 holding = "1"
 while True:
     x = requests.get('http://192.168.1.87:5000/returnchat')
-    if x.text == "{'name': 'Ike', 'message': 'ban " + name + "'}":
+    if x.text == "'Ike: ban " + name + "'":
         with open("banlogs.txt", "w") as banloghandler:
             print("client-banned", file=banloghandler)
             banloghandler.close()
@@ -143,7 +143,7 @@ while True:
         #msglen = len(message)
 
 
-        dictToSend = {'name':name, 'message':message}
+        dictToSend = "'" + name + ": " + message + "'"
         #sendnamelen = {'namelengt':namelen}
         res = requests.post('http://localhost:5000/chatpost', json=dictToSend)
         #print('response from server:',res.text)
