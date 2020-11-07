@@ -8,4 +8,3 @@ x = requests.get('https://raw.githubusercontent.com/BrawlyTheInventor/minecraftr
 
 with open('MinecraftServer.py', 'w') as app:
   app.write(x.text)
-from MinecraftServer import *
