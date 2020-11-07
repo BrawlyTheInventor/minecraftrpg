@@ -1,16 +1,11 @@
-update = input("Update & Play (y) or Play (n)?")
-if update == "y":
-    import requests
-    #https://raw.githubusercontent.com/BrawlyTheInventor/minecraftrpg/client/mcmultiplayer.py
-    import requests
+import requests
+#https://raw.githubusercontent.com/BrawlyTheInventor/minecraftrpg/server/MinecraftServer.py
+import requests
 
-    x = requests.get('https://raw.githubusercontent.com/BrawlyTheInventor/minecraftrpg/client/mcmultiplayer.py')
+x = requests.get('https://raw.githubusercontent.com/BrawlyTheInventor/minecraftrpg/server/MinecraftServer.py')
 
-    #print(x.text)
+#print(x.text)
 
-    with open('mcmultiplayer.py', 'w') as app:
-      app.write(x.text)
-    from mcmultiplayer import *
-
-elif update == "n":
-    from mcmultiplayer import *
+with open('MinecraftServer.py', 'w') as app:
+  app.write(x.text)
+from MinecraftServer import *
