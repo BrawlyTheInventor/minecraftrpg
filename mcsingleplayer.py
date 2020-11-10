@@ -11,12 +11,6 @@ print("Enter item and then a number to hold that item.")
 print("Items: 1=sword 2=pickaxe 3=axe 4=dirt 5=wood 6,8=empty")
 print("Press W, A, S, D to move")
 print("Loading...")
-name = input("Enter username")
-if name == "Ike":
-    if input("Enter Password") == "IkeDaMan1234":
-        print('Access Granted')
-    else:
-        raise Exception("Incorrect Password")
 sleep(2)
 hearts = "10"
 hearts = int(hearts)
