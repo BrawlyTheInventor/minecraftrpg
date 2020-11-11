@@ -11,9 +11,10 @@ print("Enter item and then a number to hold that item.")
 print("Items: 1=sword 2=pickaxe 3=axe 4=dirt 5=wood 6,8=empty")
 print("Press W, A, S, D to move")
 ip = input("Type the Server IP to continue")
+port = input("Type the server port to continue")
 print("Loading...")
 name = input("Enter username")
-x = requests.get('http://' + ip + ':5000/returnchat')
+x = requests.get('http://' + ip + port + '/returnchat')
 if x.text == "'Ike: pardon " + name + "'":
     with open("banlogs.txt", "r+") as f:
         data = f.read()
@@ -36,7 +37,7 @@ global slot
 slot = ""
 holding = "1"
 while True:
-    x = requests.get('http://' + ip + ':5000/returnchat')
+    x = requests.get('http://' + ip + port + '/returnchat')
     if x.text == "'Ike: ban " + name + "'":
         with open("banlogs.txt", "w") as banloghandler:
             print("client-banned", file=banloghandler)
